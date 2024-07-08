@@ -24,9 +24,11 @@ public class activityTwo extends AppCompatActivity {
         btnBack = findViewById(R.id.btnBack);
 
         Intent mainActivityIntent = getIntent();
+        Bundle userDetails = mainActivityIntent.getExtras();
 
-        String userName =  mainActivityIntent.getStringExtra("USER_NAME");
-        String password =  mainActivityIntent.getStringExtra("USER_PASSWORD");
+        assert userDetails != null;
+        String userName =  userDetails.getString("USER_NAME");
+        String password =  userDetails.getString("USER_PASSWORD");
 
         eTextUserName.setText(userName);
         eTextPassword.setText(password);

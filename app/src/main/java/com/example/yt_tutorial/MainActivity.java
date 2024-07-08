@@ -32,8 +32,12 @@ public class MainActivity extends AppCompatActivity {
                 String password = eTextPassword.getText().toString();
 
                 Intent activityTwo = new Intent(getApplicationContext(), activityTwo.class);
-                activityTwo.putExtra("USER_NAME", userName);
-                activityTwo.putExtra("USER_PASSWORD", password);
+
+                Bundle userInformation = new Bundle();
+                userInformation.putString("USER_NAME", userName);
+                userInformation.putString("USER_PASSWORD", password);
+                activityTwo.putExtras(userInformation);
+
                 startActivity(activityTwo);
             }
         });
